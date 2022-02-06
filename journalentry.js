@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
-import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight} from 'react-native';
+import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity} from 'react-native';
 import {Image as ReactImage} from 'react-native';
 import Svg, {Defs, Pattern} from 'react-native-svg';
 import {Path as SvgPath} from 'react-native-svg';

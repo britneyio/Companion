@@ -1,18 +1,22 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
-import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight} from 'react-native';
+import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity} from 'react-native';
 import {Image as ReactImage} from 'react-native';
-
+import { saveSettings } from './src/storage/settingsStorage';
 
 export default class SignUp extends Component {
 
   constructor(props) {
       super(props);
       this.state = {
-          
+          name: ''
       };
+      global.Name;
+      this.handleNameChange = this.handleNameChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  
 
   handlePress(target, owner) {
     if (this.props.onPress) {
@@ -52,7 +56,7 @@ export default class SignUp extends Component {
       } else {
           name = name;
       }
-      let state = this.state;
+      let state = this.state.name;
       state[name.split('::').join('')] = value;
       this.setState(state, () => {
           if (this.props.onChange) {
@@ -61,17 +65,48 @@ export default class SignUp extends Component {
       });
   }
 
+  handleNameChange(name){
+    global.Name = name;
+  }
+
+  handleSubmit(){
+    saveSettings(this.state);
+   this.props.navigation.navigate('Home');
+  }
+
+
+    
+
   render() {
     
     return (
     <ScrollView data-layer="2e59440a-2d09-4889-850f-bbc98728c51d" style={styles.signUp}>
-        <View data-layer="27d25091-f0a5-4e41-bfeb-0a6b8692a147" style={styles.signUp_rectangle17}></View>
+        <View data-layer="27d25091-f0a5-4e41-bfeb-0a6b8692a147" >
+          <TextInput
+          style={styles.signUp_rectangle17}
+            placeholder="Your name"
+            value={global.Name}
+            onChangeText={this.handleNameChange}
+          />
+        </View>
         <Text data-layer="bfb4dc87-ea47-4dba-b0d9-a83474958ac3" style={styles.signUp_name}>Name</Text>
-        <View data-layer="8748eaab-049c-4d0b-bd96-a38d612d3d2c" style={styles.signUp_rectangle18}></View>
-        <View data-layer="58c6a080-3c89-4f83-a091-6e5f9bc58bad" style={styles.signUp_rectangle19}></View>
+        <View data-layer="8748eaab-049c-4d0b-bd96-a38d612d3d2c" >
+        <TextInput
+          style={styles.signUp_rectangle18}
+            placeholder="email"
+           
+          />
+        </View>
+        <View data-layer="58c6a080-3c89-4f83-a091-6e5f9bc58bad" >
+        <TextInput
+          style={styles.signUp_rectangle19}
+            placeholder="password"
+            
+          />
+        </View>
         <Text data-layer="33860e91-3862-49ab-b201-d85f8b0d4c0a" style={styles.signUp_email}>Email: </Text>
-        <Text data-layer="630bb1df-6b7e-46b6-86ba-4d6559b61e59" style={styles.signUp_password}>Password:</Text>
-        <TouchableOpacity title="" onPress={() => this.props.navigation.navigate('Home')}>  <View data-layer="a1297fef-8b53-4daa-b3cf-b689cab8ce4d" style={styles.signUp_button}>
+        <Text data-layer="630bb1df-6b7e-46b6-86ba-4d6559b61e59" style={styles.signUp_password}>Password</Text>
+        <TouchableOpacity title="" onPress={()=> this.handleSubmit()}>  <View data-layer="a1297fef-8b53-4daa-b3cf-b689cab8ce4d" style={styles.signUp_button}>
             <View data-layer="defeb39c-39b9-4427-9e8a-db86e5f5a0cd" style={styles.signUp_button_rectangle20}></View>
             <Text data-layer="7ed5f9f8-651d-4750-939f-eccb57d7d1f3" style={styles.signUp_button_signUp39751e14}>Sign up</Text>
         </View></TouchableOpacity>

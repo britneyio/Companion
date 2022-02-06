@@ -8,21 +8,39 @@ import Journal from './journal';
 import Hotline from './hotline';
 import Blog from './blog';
 import Home from './home';
+import SignUp from './signUp';
+import Journalentry from './journalentry';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+    
+        <Stack.Screen
+        name="Sign Up"
+        component={SignUp}
+        />
+      <Stack.Screen 
+          name="Chatbot" 
+          component={Chatbot} 
+        />
+
+      <Stack.Screen 
+          name="Home" 
+          component={Home} 
+        />
+
         <Stack.Screen
           name="Journal"
           component={Journal}
           
         />
-        <Stack.Screen 
-          name="Chatbot" 
-          component={Chatbot} 
-        />
+       
 
         <Stack.Screen 
           name="Hotline" 
@@ -34,11 +52,10 @@ const App = () => {
           component={Blog} 
         />
 
-        <Stack.Screen 
-          name="Home" 
-          component={Home} 
-        />
-
+      <Stack.Screen
+      name="Journalentry"
+      component={Journalentry}
+/>
         </Stack.Navigator>
     </NavigationContainer>
   );
