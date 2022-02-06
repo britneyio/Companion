@@ -69,10 +69,10 @@ export default class SignIn extends Component {
         <View data-layer="96a9fcbe-2a21-47b8-b805-715241c5b28e" style={styles.signIn_rectangle19}></View>
         <Text data-layer="da5f6ac2-7602-4643-9bac-fabe62d4b9a5" style={styles.signIn_name}>Name</Text>
         <Text data-layer="86a21c8e-e421-4f3c-9eb3-c67e801cfab6" style={styles.signIn_password}>Password:</Text>
-        <View data-layer="0dd97d94-20b2-47fc-93ba-08bccd19a1f0" style={styles.signIn_button}>
+        <TouchableOpacity title="" onPress={() => this.props.navigation.navigate('Home')}>  <View data-layer="0dd97d94-20b2-47fc-93ba-08bccd19a1f0" style={styles.signIn_button}>
             <View data-layer="f6088554-f223-47cd-ba5f-72111078cbde" style={styles.signIn_button_rectangle20}></View>
             <Text data-layer="21cf9928-9a7b-4a3b-843d-04dcfab91f30" style={styles.signIn_button_signInf3db28e6}>Sign In</Text>
-        </View>
+        </View></TouchableOpacity>
         <View data-layer="159540e1-6888-4136-98f9-b2791dd89869" style={styles.signIn_topMenu}>
             <View data-layer="da96baba-633a-45a2-a58b-6b45e2c854b3" style={styles.signIn_topMenu_rectangle1}></View>
             <Text data-layer="990d0424-f5cd-4af2-a68a-b7afb748f610" style={styles.signIn_topMenu_companion}>Companion</Text>

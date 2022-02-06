@@ -71,10 +71,10 @@ export default class SignUp extends Component {
         <View data-layer="58c6a080-3c89-4f83-a091-6e5f9bc58bad" style={styles.signUp_rectangle19}></View>
         <Text data-layer="33860e91-3862-49ab-b201-d85f8b0d4c0a" style={styles.signUp_email}>Email: </Text>
         <Text data-layer="630bb1df-6b7e-46b6-86ba-4d6559b61e59" style={styles.signUp_password}>Password:</Text>
-        <View data-layer="a1297fef-8b53-4daa-b3cf-b689cab8ce4d" style={styles.signUp_button}>
+        <TouchableOpacity title="" onPress={() => this.props.navigation.navigate('Home')}>  <View data-layer="a1297fef-8b53-4daa-b3cf-b689cab8ce4d" style={styles.signUp_button}>
             <View data-layer="defeb39c-39b9-4427-9e8a-db86e5f5a0cd" style={styles.signUp_button_rectangle20}></View>
             <Text data-layer="7ed5f9f8-651d-4750-939f-eccb57d7d1f3" style={styles.signUp_button_signUp39751e14}>Sign up</Text>
-        </View>
+        </View></TouchableOpacity>
         <View data-layer="43b26425-df00-451f-a740-1256752518df" style={styles.signUp_topMenu}>
             <View data-layer="b16947e2-ce27-4363-b7d3-3772f4e0f673" style={styles.signUp_topMenu_rectangle1}></View>
             <Text data-layer="3778d3ce-6eda-450c-bf56-bd435e5d8d1e" style={styles.signUp_topMenu_companion}>Companion</Text>
