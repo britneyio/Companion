@@ -81,6 +81,15 @@ export default class Journalentry extends Component {
             <Svg data-layer="d7a74a64-480b-4091-b8ad-ebfd7e332783" style={styles.journalentry_journalTopBack_iconOpenArrowCircleLeft} preserveAspectRatio="none" viewBox="0 0 36 36" fill="rgba(141, 141, 141, 1)"><SvgPath d="M 18 0 C 8.055000305175781 0 0 8.055000305175781 0 18 C 0 27.94499969482422 8.055000305175781 36 18 36 C 27.94499969482422 36 36 27.94499969482422 36 18 C 36 8.055000305175781 27.94499969482422 0 18 0 Z M 18 4.5 L 18 13.5 L 31.5 13.5 L 31.5 22.5 L 18 22.5 L 18 31.5 L 4.5 18 L 18 4.5 Z"  /></Svg>
         </View>
     </ScrollView>
+
+      // <TextInput
+      // value={note}
+      // onChangeText={setNote}
+      // style={{ color: "#fff", fontSize: 22 }}
+      // multiline={true}
+      // autoFocus
+      // selectionColor="#fff"
+      // />
     );
   }
 }
