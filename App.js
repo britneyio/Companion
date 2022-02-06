@@ -51,11 +51,11 @@ const App = () => {
           name="Blog" 
           component={Blog} 
         />
-
-      <Stack.Screen
+  <Stack.Screen
       name="Journalentry"
       component={Journalentry}
 />
+    
         </Stack.Navigator>
     </NavigationContainer>
   );

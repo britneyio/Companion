@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity} from 'react-native';
 import {Image as ReactImage} from 'react-native';
-import { saveSettings } from './src/storage/settingsStorage';
 
 export default class SignUp extends Component {
 
@@ -13,66 +12,18 @@ export default class SignUp extends Component {
       };
       global.Name;
       this.handleNameChange = this.handleNameChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   
 
-  handlePress(target, owner) {
-    if (this.props.onPress) {
-        let name;
-        let id;
-        let index = -1;
-        if (target.search("::") > -1) {
-            const varCount = target.split("::").length;
-            if (varCount === 2) {
-                name = target.split("::")[0];
-                id = target.split("::")[1];
-            } else if (varCount === 3) {
-                name = target.split("::")[0];
-                index = parseInt(target.split("::")[1]);
-                id = target.split("::")[2];
-            }
-        } else {
-            name = target;
-        }
-        this.props.onPress({ type: 'button', name: name, index: index, id: id, owner: owner });
-    }
-  }
+  
 
-  handleChangeTextinput(name, value) {
-      let id;
-      let index = -1;
-      if (name.search('::') > -1) {
-          const varCount = name.split("::").length;
-          if (varCount === 2) {
-              name = name.split("::")[0];
-              id = name.split("::")[1];
-          } else if (varCount === 3) {
-              name = name.split("::")[0];
-              index = name.split("::")[1];
-              id = name.split("::")[2];
-          }
-      } else {
-          name = name;
-      }
-      let state = this.state.name;
-      state[name.split('::').join('')] = value;
-      this.setState(state, () => {
-          if (this.props.onChange) {
-              this.props.onChange({ type: 'textinput', name: name, value: value, index: index, id: id });
-          }
-      });
-  }
 
   handleNameChange(name){
     global.Name = name;
   }
 
-  handleSubmit(){
-    saveSettings(this.state);
-   this.props.navigation.navigate('Home');
-  }
+  
 
 
     
@@ -91,22 +42,26 @@ export default class SignUp extends Component {
         </View>
         <Text data-layer="bfb4dc87-ea47-4dba-b0d9-a83474958ac3" style={styles.signUp_name}>Name</Text>
         <View data-layer="8748eaab-049c-4d0b-bd96-a38d612d3d2c" >
+          <Text>
         <TextInput
           style={styles.signUp_rectangle18}
             placeholder="email"
            
           />
+          </Text>
         </View>
         <View data-layer="58c6a080-3c89-4f83-a091-6e5f9bc58bad" >
+          <Text>
         <TextInput
           style={styles.signUp_rectangle19}
             placeholder="password"
             
           />
+          </Text>
         </View>
         <Text data-layer="33860e91-3862-49ab-b201-d85f8b0d4c0a" style={styles.signUp_email}>Email: </Text>
         <Text data-layer="630bb1df-6b7e-46b6-86ba-4d6559b61e59" style={styles.signUp_password}>Password</Text>
-        <TouchableOpacity title="" onPress={()=> this.handleSubmit()}>  <View data-layer="a1297fef-8b53-4daa-b3cf-b689cab8ce4d" style={styles.signUp_button}>
+        <TouchableOpacity title="" onPress={()=> this.props.navigation.navigate('Home')}>  <View data-layer="a1297fef-8b53-4daa-b3cf-b689cab8ce4d" style={styles.signUp_button}>
             <View data-layer="defeb39c-39b9-4427-9e8a-db86e5f5a0cd" style={styles.signUp_button_rectangle20}></View>
             <Text data-layer="7ed5f9f8-651d-4750-939f-eccb57d7d1f3" style={styles.signUp_button_signUp39751e14}>Sign up</Text>
         </View></TouchableOpacity>
@@ -185,7 +140,7 @@ const styles = StyleSheet.create({
     "fontSize": 30,
     "fontWeight": "400",
     "fontStyle": "normal",
-    "fontFamily": ".AppleSystemUIFont",
+    "fontFamily": "Arial",
     "textAlign": "left",
     "marginTop": 0,
     "marginRight": 0,
@@ -266,7 +221,7 @@ const styles = StyleSheet.create({
     "fontSize": 30,
     "fontWeight": "400",
     "fontStyle": "normal",
-    "fontFamily": ".AppleSystemUIFont",
+    "fontFamily": "Arial",
     "textAlign": "left",
     "marginTop": 0,
     "marginRight": 0,
@@ -289,7 +244,7 @@ const styles = StyleSheet.create({
     "fontSize": 30,
     "fontWeight": "400",
     "fontStyle": "normal",
-    "fontFamily": ".AppleSystemUIFont",
+    "fontFamily": "Arial",
     "textAlign": "left",
     "marginTop": 0,
     "marginRight": 0,
@@ -358,7 +313,7 @@ const styles = StyleSheet.create({
     "fontSize": 30,
     "fontWeight": "400",
     "fontStyle": "normal",
-    "fontFamily": ".AppleSystemUIFont",
+    "fontFamily": "Arial",
     "textAlign": "left",
     "marginTop": 0,
     "marginRight": 0,

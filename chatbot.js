@@ -17,52 +17,6 @@ export default class Chatbot extends Component {
   }
 
 
-  handlePress(target, owner) {
-    if (this.props.onPress) {
-        let name;
-        let id;
-        let index = -1;
-        if (target.search("::") > -1) {
-            const varCount = target.split("::").length;
-            if (varCount === 2) {
-                name = target.split("::")[0];
-                id = target.split("::")[1];
-            } else if (varCount === 3) {
-                name = target.split("::")[0];
-                index = parseInt(target.split("::")[1]);
-                id = target.split("::")[2];
-            }
-        } else {
-            name = target;
-        }
-        this.props.onPress({ type: 'button', name: name, index: index, id: id, owner: owner });
-    }
-  }
-
-  handleChangeTextinput(name, value) {
-      let id;
-      let index = -1;
-      if (name.search('::') > -1) {
-          const varCount = name.split("::").length;
-          if (varCount === 2) {
-              name = name.split("::")[0];
-              id = name.split("::")[1];
-          } else if (varCount === 3) {
-              name = name.split("::")[0];
-              index = name.split("::")[1];
-              id = name.split("::")[2];
-          }
-      } else {
-          name = name;
-      }
-      let state = this.state;
-      state[name.split('::').join('')] = value;
-      this.setState(state, () => {
-          if (this.props.onChange) {
-              this.props.onChange({ type: 'textinput', name: name, value: value, index: index, id: id });
-          }
-      });
-  }
 
   render() {
     
@@ -71,7 +25,8 @@ export default class Chatbot extends Component {
         <View data-layer="ed82fafa-62a1-4544-b870-2eaf1c0e7674" style={styles.chatbot_chatTopBack}>
             <Svg data-layer="8dabb04a-f1bf-49cc-b7bd-26db4563aba7" style={styles.chatbot_chatTopBack_path9} preserveAspectRatio="none" viewBox="0 0 428 95" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 0 0 L 428 0 L 428 95 L 0 95 L 0 0 Z"  /></Svg>
             <Text data-layer="3d71350a-edcf-46c4-8dbf-ebadb5eea1fb" style={styles.chatbot_chatTopBack_companionf1f0f985}>Companion</Text>
-            <Svg data-layer="18b98c46-dc20-4f7e-a60a-6dc14da378cf" style={styles.chatbot_chatTopBack_iconOpenArrowCircleLeft} preserveAspectRatio="none" viewBox="0 0 36 36" fill="rgba(141, 141, 141, 1)"><SvgPath d="M 18 0 C 8.055000305175781 0 0 8.055000305175781 0 18 C 0 27.94499969482422 8.055000305175781 36 18 36 C 27.94499969482422 36 36 27.94499969482422 36 18 C 36 8.055000305175781 27.94499969482422 0 18 0 Z M 18 4.5 L 18 13.5 L 31.5 13.5 L 31.5 22.5 L 18 22.5 L 18 31.5 L 4.5 18 L 18 4.5 Z"  /></Svg>
+   <TouchableOpacity title="" onPress={() => this.props.navigation.navigate('Home')}   >      <Svg data-layer="18b98c46-dc20-4f7e-a60a-6dc14da378cf" style={styles.chatbot_chatTopBack_iconOpenArrowCircleLeft} preserveAspectRatio="none" viewBox="0 0 36 36" fill="rgba(141, 141, 141, 1)"><SvgPath d="M 18 0 C 8.055000305175781 0 0 8.055000305175781 0 18 C 0 27.94499969482422 8.055000305175781 36 18 36 C 27.94499969482422 36 36 27.94499969482422 36 18 C 36 8.055000305175781 27.94499969482422 0 18 0 Z M 18 4.5 L 18 13.5 L 31.5 13.5 L 31.5 22.5 L 18 22.5 L 18 31.5 L 4.5 18 L 18 4.5 Z"  /></Svg>
+        </TouchableOpacity>
         </View>
 
         {/* BOTTOM MENU STARTS HERE */}

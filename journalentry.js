@@ -17,52 +17,6 @@ export default class Journalentry extends Component {
   }
 
 
-  handlePress(target, owner) {
-    if (this.props.onPress) {
-        let name;
-        let id;
-        let index = -1;
-        if (target.search("::") > -1) {
-            const varCount = target.split("::").length;
-            if (varCount === 2) {
-                name = target.split("::")[0];
-                id = target.split("::")[1];
-            } else if (varCount === 3) {
-                name = target.split("::")[0];
-                index = parseInt(target.split("::")[1]);
-                id = target.split("::")[2];
-            }
-        } else {
-            name = target;
-        }
-        this.props.onPress({ type: 'button', name: name, index: index, id: id, owner: owner });
-    }
-  }
-
-  handleChangeTextinput(name, value) {
-      let id;
-      let index = -1;
-      if (name.search('::') > -1) {
-          const varCount = name.split("::").length;
-          if (varCount === 2) {
-              name = name.split("::")[0];
-              id = name.split("::")[1];
-          } else if (varCount === 3) {
-              name = name.split("::")[0];
-              index = name.split("::")[1];
-              id = name.split("::")[2];
-          }
-      } else {
-          name = name;
-      }
-      let state = this.state;
-      state[name.split('::').join('')] = value;
-      this.setState(state, () => {
-          if (this.props.onChange) {
-              this.props.onChange({ type: 'textinput', name: name, value: value, index: index, id: id });
-          }
-      });
-  }
 
   render() {
     
@@ -73,12 +27,20 @@ export default class Journalentry extends Component {
             <Text data-layer="abd2fb46-5e23-4f2d-9f69-f87fdcea17e3" style={styles.journalentry_topMenu_companion}>Companion</Text>
             <Text data-layer="308b330b-cccb-4cc3-b0bd-335c72482384" style={styles.journalentry_topMenu_journal}>JOURNAL</Text>
         </View>
+        <View>
+          <Text>
+          <TextInput style={styles.write}
+
+          />
+          </Text>
+          </View>
         <View data-layer="9f030b0f-18fa-43ef-a215-e668e8fe102a" style={styles.journalentry_journalTopBack}>
-            <TouchableOpacity title="" onPress={() => this.props.navigation.navigate('Journal')}>  <Svg data-layer="422bc78f-b821-4474-b99c-56c1d1fb0670" style={styles.journalentry_journalTopBack_path9} preserveAspectRatio="none" viewBox="0 0 390 95" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 0 0 L 390 0 L 390 95 L 0 95 L 0 0 Z"  /></Svg></TouchableOpacity>
+            <Svg data-layer="422bc78f-b821-4474-b99c-56c1d1fb0670" style={styles.journalentry_journalTopBack_path9} preserveAspectRatio="none" viewBox="0 0 390 95" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 0 0 L 390 0 L 390 95 L 0 95 L 0 0 Z"  /></Svg>
             <Text data-layer="5a0717b5-e63d-4c21-8aeb-173ef4c4c47c" style={styles.journalentry_journalTopBack_titleOfJournalEntry}>Title of Journal entry</Text>
             <Text data-layer="2a63349a-34e1-4b61-b3ff-0acfb2425b5a" style={styles.journalentry_journalTopBack_date}>Date
 </Text>
-            <Svg data-layer="d7a74a64-480b-4091-b8ad-ebfd7e332783" style={styles.journalentry_journalTopBack_iconOpenArrowCircleLeft} preserveAspectRatio="none" viewBox="0 0 36 36" fill="rgba(141, 141, 141, 1)"><SvgPath d="M 18 0 C 8.055000305175781 0 0 8.055000305175781 0 18 C 0 27.94499969482422 8.055000305175781 36 18 36 C 27.94499969482422 36 36 27.94499969482422 36 18 C 36 8.055000305175781 27.94499969482422 0 18 0 Z M 18 4.5 L 18 13.5 L 31.5 13.5 L 31.5 22.5 L 18 22.5 L 18 31.5 L 4.5 18 L 18 4.5 Z"  /></Svg>
+<TouchableOpacity title="" onPress={() => this.props.navigation.navigate('Journal')}>   <Svg data-layer="d7a74a64-480b-4091-b8ad-ebfd7e332783" style={styles.journalentry_journalTopBack_iconOpenArrowCircleLeft} preserveAspectRatio="none" viewBox="0 0 36 36" fill="rgba(141, 141, 141, 1)"><SvgPath d="M 18 0 C 8.055000305175781 0 0 8.055000305175781 0 18 C 0 27.94499969482422 8.055000305175781 36 18 36 C 27.94499969482422 36 36 27.94499969482422 36 18 C 36 8.055000305175781 27.94499969482422 0 18 0 Z M 18 4.5 L 18 13.5 L 31.5 13.5 L 31.5 22.5 L 18 22.5 L 18 31.5 L 4.5 18 L 18 4.5 Z"  /></Svg>
+</TouchableOpacity>
         </View>
     </ScrollView>
     );
@@ -95,6 +57,35 @@ Journalentry.defaultProps = {
 
 
 const styles = StyleSheet.create({
+  "write": {
+    "opacity": 1,
+    "position": "absolute",
+    "backgroundColor": "rgba(255, 255, 255, 1)",
+    "marginTop": 0,
+    "marginRight": 0,
+    "marginBottom": 0,
+    "marginLeft": 0,
+    "paddingTop": 0,
+    "paddingRight": 0,
+    "paddingBottom": 0,
+    "paddingLeft": 0,
+    "borderTopWidth": 1,
+    "borderTopColor": "rgba(112, 112, 112, 1)",
+    "borderRightWidth": 1,
+    "borderRightColor": "rgba(112, 112, 112, 1)",
+    "borderBottomWidth": 1,
+    "borderBottomColor": "rgba(112, 112, 112, 1)",
+    "borderLeftWidth": 1,
+    "borderLeftColor": "rgba(112, 112, 112, 1)",
+    "borderTopLeftRadius": 0,
+    "borderTopRightRadius": 0,
+    "borderBottomLeftRadius": 0,
+    "borderBottomRightRadius": 0,
+    "width": 385,
+    "height": 400,
+    "left": 1,
+    "top": 230
+  },
   "journalentry": {
     "opacity": 1,
     "position": "relative",
@@ -237,7 +228,7 @@ const styles = StyleSheet.create({
     "fontSize": 30,
     "fontWeight": "400",
     "fontStyle": "normal",
-    "fontFamily": ".AppleSystemUIFont",
+    "fontFamily": "Arial",
     "textAlign": "left",
     "marginTop": 0,
     "marginRight": 0,
@@ -260,7 +251,7 @@ const styles = StyleSheet.create({
     "fontSize": 30,
     "fontWeight": "400",
     "fontStyle": "normal",
-    "fontFamily": ".AppleSystemUIFont",
+    "fontFamily": "Arial",
     "textAlign": "left",
     "marginTop": 0,
     "marginRight": 0,
