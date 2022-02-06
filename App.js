@@ -5,6 +5,9 @@ import { NavigationContainer } from '@react-navigation/native';
 //pages
 import Chatbot from './chatbot';
 import Journal from './journal';
+import Hotline from './hotline';
+import Blog from './blog';
+import Home from './home';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -17,9 +20,25 @@ const App = () => {
           
         />
         <Stack.Screen 
-        name="Chatbot" 
-        component={Chatbot} 
+          name="Chatbot" 
+          component={Chatbot} 
         />
+
+        <Stack.Screen 
+          name="Hotline" 
+          component={Hotline} 
+        />
+
+        <Stack.Screen 
+          name="Blog" 
+          component={Blog} 
+        />
+
+        <Stack.Screen 
+          name="Home" 
+          component={Home} 
+        />
+
         </Stack.Navigator>
     </NavigationContainer>
   );

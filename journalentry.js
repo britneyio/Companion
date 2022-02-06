@@ -74,7 +74,7 @@ export default class Journalentry extends Component {
             <Text data-layer="308b330b-cccb-4cc3-b0bd-335c72482384" style={styles.journalentry_topMenu_journal}>JOURNAL</Text>
         </View>
         <View data-layer="9f030b0f-18fa-43ef-a215-e668e8fe102a" style={styles.journalentry_journalTopBack}>
-            <Svg data-layer="422bc78f-b821-4474-b99c-56c1d1fb0670" style={styles.journalentry_journalTopBack_path9} preserveAspectRatio="none" viewBox="0 0 390 95" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 0 0 L 390 0 L 390 95 L 0 95 L 0 0 Z"  /></Svg>
+            <TouchableOpacity title="" onPress={() => this.props.navigation.navigate('Journal')}>  <Svg data-layer="422bc78f-b821-4474-b99c-56c1d1fb0670" style={styles.journalentry_journalTopBack_path9} preserveAspectRatio="none" viewBox="0 0 390 95" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 0 0 L 390 0 L 390 95 L 0 95 L 0 0 Z"  /></Svg></TouchableOpacity>
             <Text data-layer="5a0717b5-e63d-4c21-8aeb-173ef4c4c47c" style={styles.journalentry_journalTopBack_titleOfJournalEntry}>Title of Journal entry</Text>
             <Text data-layer="2a63349a-34e1-4b61-b3ff-0acfb2425b5a" style={styles.journalentry_journalTopBack_date}>Date
 </Text>
