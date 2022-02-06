@@ -18,8 +18,8 @@ class Journalingdailyprompt extends React.Component {
     return (
           <div data-layer="96ca7e4b-f0c9-4822-87a3-97a331883f54" className="journalingdailyprompt">        <div data-layer="da4cb44c-1e55-4924-8a7d-1681b4dcb698" className="todayIsXxxx20xx">Today is xx/xx/20xx </div>
         <div data-layer="701c37df-1280-4312-86d8-79ef0f2ba7cb" className="youHavehaventWrittenToday">You have/haven’t written today!</div>
-        <div data-layer="9161925d-33e5-41e0-bc67-b99a46427d67" className="dailyPrompt94aa8e6b">            <div data-layer="442bc32f-966c-4ff8-a525-45e9c4d66c57" className="rectangle442ba48ea"></div>
-            <div data-layer="c6f308ce-c987-4c23-a71c-2db4af55c373" className="dailyPromptd4ceac22">Daily Prompt</div>
+        <div data-layer="9161925d-33e5-41e0-bc67-b99a46427d67" className="dailyPrompt273ba1d1">            <div data-layer="442bc32f-966c-4ff8-a525-45e9c4d66c57" className="rectangle4f0d7dd26"></div>
+            <div data-layer="c6f308ce-c987-4c23-a71c-2db4af55c373" className="dailyPrompt5ea7a125">Daily Prompt</div>
 </div>
         <div data-layer="05e9017c-bea9-4e6a-93f0-c0db63e82c77" className="pastEntries">Past Entries<br /></div>
         <div data-layer="d46cb79c-1dee-48e8-b1a8-c6a2f82aff57" className="bottomMenu">            <div data-layer="15760a66-8022-4f4b-954b-f1396fa4c3c5" className="group1">                <div data-layer="66d20551-1efe-4bef-a6f6-1f2b1985c58d" className="rectangle3"></div>
@@ -39,7 +39,6 @@ class Journalingdailyprompt extends React.Component {
 </div>
         <div data-layer="1bd7b3ef-9d7f-49b1-b5d7-e2d05d3ea39b" className="rectangle5"></div>
         <div data-layer="a0b376ba-f815-4485-a5e9-1065646a40f0" className="rectangle8"></div>
-        <div data-layer="71f19358-cd72-40dd-b70a-b798491804d5" className="rectangle25"></div>
         <div data-layer="04815c89-0503-469c-a624-266baae95954" className="dailyPrompt">            <div data-layer="57b178cd-87ca-4066-a90e-2c24563d3924" className="rectangle4"></div>
             <div data-layer="b4f6a08d-66f1-4774-be4f-40ec37e9b3bf" className="writeAnEntry">Write an entry...</div>
 </div>

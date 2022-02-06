@@ -17,7 +17,7 @@ class Chatbot extends React.Component {
     
     return (
           <div data-layer="bdc976b1-18d1-4008-bfe7-9f370810019a" className="chatbot">        <div data-layer="ed82fafa-62a1-4544-b870-2eaf1c0e7674" className="chatTopBack">            <svg data-layer="8dabb04a-f1bf-49cc-b7bd-26db4563aba7" preserveAspectRatio="none" viewBox="0 0 428 95" className="path9"><path d="M 0 0 L 428 0 L 428 95 L 0 95 L 0 0 Z"  /></svg>
-            <div data-layer="3d71350a-edcf-46c4-8dbf-ebadb5eea1fb" className="companiona678080b">Companion</div>
+            <div data-layer="3d71350a-edcf-46c4-8dbf-ebadb5eea1fb" className="companionf1f0f985">Companion</div>
             <svg data-layer="18b98c46-dc20-4f7e-a60a-6dc14da378cf" preserveAspectRatio="none" viewBox="0 0 36 36" className="iconOpenArrowCircleLeft"><path d="M 18 0 C 8.055000305175781 0 0 8.055000305175781 0 18 C 0 27.94499969482422 8.055000305175781 36 18 36 C 27.94499969482422 36 36 27.94499969482422 36 18 C 36 8.055000305175781 27.94499969482422 0 18 0 Z M 18 4.5 L 18 13.5 L 31.5 13.5 L 31.5 22.5 L 18 22.5 L 18 31.5 L 4.5 18 L 18 4.5 Z"  /></svg>
 </div>
         <div data-layer="c77360db-c677-4f07-a7b4-dd11230be250" className="bottomMenu">            <div data-layer="40b0c527-6cb7-41d5-a924-4fe6de97c551" className="rectangle3"></div>

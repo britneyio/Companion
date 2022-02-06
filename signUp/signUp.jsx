@@ -27,7 +27,7 @@ class SignUp extends React.Component {
         <div data-layer="d0544014-d69a-4510-958b-33254da73ccb" className="email">Email: </div>
         <div data-layer="ab24d0ef-44a2-448c-8685-de0d2915719c" className="password">Password:</div>
         <div data-layer="594ed68d-8664-433a-a4aa-e821395452b5" className="button">            <div data-layer="7efc3ef3-0c00-4e12-97db-e32fa2dc450c" className="rectangle20"></div>
-            <div data-layer="72d6ce62-c091-4fb4-a824-dc342648223c" className="signUp6425d818">Sign up</div>
+            <div data-layer="72d6ce62-c091-4fb4-a824-dc342648223c" className="signUp40890b17">Sign up</div>
 </div>
 </div>
 
